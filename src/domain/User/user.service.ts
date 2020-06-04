@@ -27,7 +27,7 @@ export class UserService{
         }catch (error) {
             throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR); 
         }
-    }
+    } 
 
     async createUser(user): Promise<User>{
         try {
@@ -42,11 +42,7 @@ export class UserService{
 
     async updateUser(userData, params){
         try{
-            
-          
-            
             return await this.userRepository.update(params,userData);
-            
         } catch (error){
             throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR); 
         }
